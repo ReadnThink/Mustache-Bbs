@@ -1,0 +1,26 @@
+{{>layouts/header}}
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#hospitals}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{hospitalName}}</td>
+            <td>{{roadNameAddress}}</td>
+        </tr>
+    {{/hospitals}}
+    </tbody>
+</table>
+<ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link" href="?page={{first}}">first</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{previous}}">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{last}}">last</a></li>
+</ul>
+{{>layouts/footer}}
