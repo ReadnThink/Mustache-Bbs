@@ -24,9 +24,7 @@ class HospitalRepositoryTest {
         inClues.add("보건진료소");
 
         List<Hospital> hospitals = hospitalRepository.findByBusinessTypeNameIn(inClues);
-        for (Hospital hospital : hospitals) {
-            System.out.println(hospital.getHospitalName());
-        }
+        printHospitalNameAndAddress(hospitals);
     }
 
     @Test // %안넣어도 된다.
@@ -45,6 +43,15 @@ class HospitalRepositoryTest {
     void endsWith(){
         List<Hospital> hospitals = hospitalRepository.findByRoadNameAddressEndingWith("병원");
         printHospitalNameAndAddress(hospitals);
+    }
+
+    @Test
+    void between(){
+        List<Hospital> hospitals = hospitalRepository.findByPatientRoomCountBetween(10, 20);
+        //정렬하여 출력
+        List<Hospital> orderByHospitals = hospitalRepository.findByPatientRoomCountBetweenOrderByPatientRoomCountDesc(10, 20);
+//        printHospitalNameAndAddress(hospitals);
+        printHospitalNameAndAddress(orderByHospitals);
     }
 
     void printHospitalNameAndAddress(List<Hospital> hospitals) {
