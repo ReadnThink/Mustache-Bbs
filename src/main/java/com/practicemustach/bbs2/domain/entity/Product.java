@@ -1,4 +1,4 @@
-package com.practicemustach.bbs2.domain;
+package com.practicemustach.bbs2.domain.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

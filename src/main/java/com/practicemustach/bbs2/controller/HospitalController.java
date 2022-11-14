@@ -1,6 +1,6 @@
 package com.practicemustach.bbs2.controller;
 
-import com.practicemustach.bbs2.domain.Hospital;
+import com.practicemustach.bbs2.domain.entity.Hospital;
 import com.practicemustach.bbs2.repository.HospitalRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

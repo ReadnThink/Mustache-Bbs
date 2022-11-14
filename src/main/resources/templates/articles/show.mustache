@@ -11,5 +11,21 @@
     </div>
     <a href="/articles/{{id}}/edit" class="btn btn-primary">Edit</a>
     <a href="/articles/{{id}}/delete" class="btn btn-danger">Delete</a>
+    <hr>
+    <h3>댓글</h3>
+    <form action="/reply/{{id}}" method="post">
+        <label for="writer" class="form-label">Writer : </label>
+        <input type="text" name="writer">
+        <label for="comment" class="form-label">Comment : </label>
+        <input type="text" name="comment" style="width: 300px">
+        <button type="submit" class="btn btn-warning" style="margin-top: 0px">Submit</button>
+    </form>
+    <br/>
+    {{#replies}}
+        <h5>작성자 : {{writer}}</h5>
+        <h5>댓글 내용 : {{comment}} </h5>
+        <a href="/reply/delete/{{id}}">삭제</a>
+        <br/><br/>
+    {{/replies}}
 {{/article}}
 {{>layouts/footer}}

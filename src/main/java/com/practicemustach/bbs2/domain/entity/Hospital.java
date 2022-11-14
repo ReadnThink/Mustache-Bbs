@@ -1,5 +1,6 @@
-package com.practicemustach.bbs2.domain;
+package com.practicemustach.bbs2.domain.entity;
 
+import com.practicemustach.bbs2.domain.dto.HospitalResponse;
 import lombok.Getter;
 
 import javax.persistence.Column;
@@ -14,7 +15,7 @@ public class Hospital {
     @Id
     private Integer id;
 
-    @Column(name = "road_name_address") //나타낼 정보들 Column으로 맵핑
+    @Column(name = "road_name_address") // 컬럼 이름을 특정
     private String roadNameAddress;
 
     @Column(name = "hospital_name")
@@ -25,4 +26,9 @@ public class Hospital {
     private Integer totalNumberOfBeds;
     private String businessTypeName;
     private Float totalAreaSize;
+
+//    public static HospitalResponse of(Hospital hospital) {
+//        return new HospitalResponse(hospital.getId(), hospital.getHospitalName(), hospital.getRoadNameAddress());
+//    }
+
 }

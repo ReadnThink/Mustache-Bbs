@@ -1,7 +1,6 @@
 package com.practicemustach.bbs2.repository;
 
-import com.practicemustach.bbs2.domain.Hospital;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.practicemustach.bbs2.domain.entity.Hospital;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

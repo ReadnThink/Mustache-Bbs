@@ -1,6 +1,6 @@
 package com.practicemustach.bbs2.repository;
 
-import com.practicemustach.bbs2.domain.Article;
+import com.practicemustach.bbs2.domain.entity.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
     // Spring이 ArticleRepository구현체를 DI (인터페이스 아님)
     // 인터페이스지만 그 구현체(ArticleDao)를 넣어준다

@@ -1,14 +1,12 @@
 package com.practicemustach.bbs2.repository;
 
-import com.practicemustach.bbs2.domain.Hospital;
+import com.practicemustach.bbs2.domain.entity.Hospital;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class HospitalRepositoryTest {
@@ -27,7 +25,7 @@ class HospitalRepositoryTest {
         printHospitalNameAndAddress(hospitals);
     }
 
-    @Test // %안넣어도 된다.
+    @Test // like="%송파구%" containing = %안넣어도 된다.
     void containing(){
         List<Hospital> hospitals = hospitalRepository.findByRoadNameAddressContaining("송파구");
         printHospitalNameAndAddress(hospitals);
