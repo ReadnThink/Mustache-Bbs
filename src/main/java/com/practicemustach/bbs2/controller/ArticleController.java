@@ -81,7 +81,7 @@ public class ArticleController {
     @PostMapping("/{id}/update")
     public String update(@PathVariable Long id, ArticleDto articleDto, Model model){
         log.info("title: {}  content: {}",articleDto.toEntity(),articleDto.getContent());
-        Article article = articleRepository.save(articleDto.toEntity());
+        Article article = articleRepository.save(articleDto.toEntity(id));
         //Duplicated Entry에러 나지 않는 이유
         //.save를 할 때 id가 있다면 insert대신 update가 실행되기 때문
         model.addAttribute("article", article);

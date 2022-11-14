@@ -1,22 +1,23 @@
 {{>layouts/header}}
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Title</th>
-        <th scope="col">Content</th>
-    </tr>
-    </thead>
-    <tbody class="table-group-divider">
-    {{#articles}}
+<div class="mb-3">
+    <table class="table">
+        <thead class="table-info">
         <tr>
-            <th>{{id}}</th>
-            <td><a href="/articles/{{id}}">{{title}}</a></td>
-            <td>{{content}}</td>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
         </tr>
-    {{/articles}}
-    </tbody>
-</table>
-<a href="/articles/new">new article</a>
-<a href="/articles">articles List</a>
-
+        </thead>
+        <tbody class="table-group-divider">
+        {{#articles}}
+            <tr>
+                <th>{{id}}</th>
+                <td><a href="/articles/{{id}}">{{title}}</a></td>
+                <td>{{content}}</td>
+            </tr>
+        {{/articles}}
+        </tbody>
+    </table>
+</div>
+<button type="button" onclick="location.href='/articles/new'" class="btn btn-primary">새 글 작성</button>
+{{>layouts/footer}}

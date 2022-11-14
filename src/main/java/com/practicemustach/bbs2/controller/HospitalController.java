@@ -22,15 +22,16 @@ public class HospitalController {
         this.hospitalRepository = hospitalRepository;
     }
 
-    @GetMapping("")
+    @GetMapping("/list")
     public String list(Model model, @PageableDefault(size = 15,sort = "id") Pageable pageable){
         Page<Hospital> hospitals = hospitalRepository.findAll(pageable);
         log.info("size:{}",hospitals.getSize());
         model.addAttribute("hospitals",hospitals);
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next", pageable.next().getPageNumber());
-        model.addAttribute("first", pageable.first().getPageNumber());
-        model.addAttribute("last",pageable.next().getPageSize() - 1); //last page값을 어떻게 넣을지
+        model.addAttribute("first", pageable.first().getPageNumber()); //first page값
+        model.addAttribute("last",111919 / 15); //last page값
+        System.out.println("first page = "+pageable.first() + "    next page = " + pageable.next().getPageNumber());
         return "hospital/list";
     }
 }
