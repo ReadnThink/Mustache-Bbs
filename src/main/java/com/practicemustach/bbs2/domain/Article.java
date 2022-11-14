@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "article2")
+@Table(name = "article")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor //update는 id도 받기떄문에 추가
