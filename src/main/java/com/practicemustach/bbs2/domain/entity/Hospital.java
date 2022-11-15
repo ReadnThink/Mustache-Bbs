@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "nation_wide_hospitals") //클래스 이름의 테이블이 아닌 태그한 이름의 테이블이라는 표시
 @Getter
 public class Hospital {
-   @Id
+    @Id
     private Integer id;
 
     @Column(name = "road_name_address") // 컬럼 이름을 특정

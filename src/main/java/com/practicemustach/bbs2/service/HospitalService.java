@@ -17,16 +17,17 @@ public class HospitalService {
         this.hospitalRepository = hospitalRepository;
     }
 
-    //
+
     public HospitalResponse getHospital(Integer id){
         //findById = Optional을 리턴한다.
-        Optional<Hospital> optHospital = hospitalRepository.findById(id); //Entity
+        Optional<Hospital> optHospital = hospitalRepository.findById(id); //Entity -> Hospital의 of메소드를 이용해 Dto를 설정
         Hospital hospital = optHospital.get();
         HospitalResponse hospitalResponse = Hospital.of(hospital); //Dto
+        //Entity의 businessStatusCode가 13 = 영업중, 3 = 폐업 else 스트링 변환하여 setter로 Dto에 저장한다.
         if(hospital.getBusinessStatusCode() == 13){
             hospitalResponse.setBusinessStatusName("영업중");
         } else if (hospital.getBusinessStatusCode() == 3) {
-            hospitalResponse.setBusinessStatusName("페업");
+            hospitalResponse.setBusinessStatusName("폐업");
         } else {
             hospitalResponse.setBusinessStatusName(String.valueOf(hospital.getBusinessStatusCode()));
         }

@@ -58,7 +58,9 @@ class HospitalRestControllerTest {
         // perform의 리턴값으로 ResultActions 객체가 리턴되는데, andExpect()를 통해 결과값 검증을 할 수 있다.
         // andExpect()메서드에는 ResultMatcher()를 활용하는데, MockMvcResultMatchers클래스에 정의돼 있는 메서드를 활용해 생성 할 수 있습니다.
         mockMvc.perform(get(url))
-                .andExpect(status().isOk())
+                .andExpect(status().isOk()) // isOk = 응답상태 코드가 200인지 확인
+                //jsonPath exists()해당 Path에 값이 존재하는지 확인
+                //jsonPath value 해당 Path에 값이 "expectedValue"와 일치하는지 확인
                 .andExpect(jsonPath("$.hospitalName").exists()) // $는 루트 $아래에 hospitalName이 있어야 함
                 .andExpect(jsonPath("$.hospitalName").value("노소아청소년과의원"))
                 //요청과 응답의 전체 내용확인

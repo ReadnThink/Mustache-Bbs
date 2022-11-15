@@ -17,7 +17,7 @@ public class HospitalResponse {
     private Integer totalNumberOfBeds;
     private String businessTypeName;
     private Float totalAreaSize;
-    private String businessStatusName;
+    private String businessStatusName; //생성자로 주입받지 않고 service를 통해 Entity의 Integer인 businessStatusCode를 String으로 변환하여 setter로 받을 것이다.
 
 
     public HospitalResponse(Integer id, String roadNameAddress, String hospitalName, Integer patientRoomCount, Integer totalNumberOfBeds, String businessTypeName, Float totalAreaSize) {
@@ -29,7 +29,7 @@ public class HospitalResponse {
         this.businessTypeName = businessTypeName;
         this.totalAreaSize = totalAreaSize;
     }
-
+    //변환된 Entity의 businessStatusCode를 받기위해 setter 선언
     public void setBusinessStatusName(String businessStatusName) {
         this.businessStatusName = businessStatusName;
     }
