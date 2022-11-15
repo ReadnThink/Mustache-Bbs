@@ -26,9 +26,11 @@ public class Hospital {
     private Integer totalNumberOfBeds;
     private String businessTypeName;
     private Float totalAreaSize;
+    private Integer businessStatusCode;
 
     //HospitalResponse로 클라이언트에게 보여주기 위해 of메서드 작성
     //HospitalResponse 클래스 안에 생성자를 뚫어줘야 한다.
+    //Static선언은 Hospital.of(hospital.get())으로 가독성이 좋다 Static이 아닐경우 -> hospital.get().of(hospital.get())
     public static HospitalResponse of(Hospital hospital) {
         return new HospitalResponse(hospital.getId(), hospital.getHospitalName(),
                 hospital.getRoadNameAddress(), hospital.getPatientRoomCount(),
