@@ -27,8 +27,13 @@ public class Hospital {
     private String businessTypeName;
     private Float totalAreaSize;
 
-//    public static HospitalResponse of(Hospital hospital) {
-//        return new HospitalResponse(hospital.getId(), hospital.getHospitalName(), hospital.getRoadNameAddress());
-//    }
+    //HospitalResponse로 클라이언트에게 보여주기 위해 of메서드 작성
+    //HospitalResponse 클래스 안에 생성자를 뚫어줘야 한다.
+    public static HospitalResponse of(Hospital hospital) {
+        return new HospitalResponse(hospital.getId(), hospital.getHospitalName(),
+                hospital.getRoadNameAddress(), hospital.getPatientRoomCount(),
+                hospital.getTotalNumberOfBeds(),hospital.getBusinessTypeName()
+        ,   hospital.getTotalAreaSize());
+    }
 
 }

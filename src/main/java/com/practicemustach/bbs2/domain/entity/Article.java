@@ -23,6 +23,8 @@ public class Article {
     private String title;
     private String content;
 
+    //fetch :EAGER = 관계된 Entity정보 미리 불러온다 Lazy = 실제 요청하는 순간 불러온다.
+    //mappedBy : 양방향 관계설정 시 관계의 주체가 되는 쪽에서 정의
     @OneToMany(mappedBy = "article", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @OrderBy("id asc") //댓글 정렬
     private List<Reply> replies = new ArrayList<>();
