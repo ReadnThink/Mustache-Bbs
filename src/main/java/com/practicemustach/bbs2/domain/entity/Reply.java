@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Reply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String comment;
     private String writer;
 
@@ -26,11 +26,7 @@ public class Reply {
     @LastModifiedDate
     private String modifiedDate;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "article_id")
     private Article article;
-
-
-
 }
