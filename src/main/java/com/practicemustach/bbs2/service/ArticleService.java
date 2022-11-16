@@ -33,8 +33,8 @@ public class ArticleService {
     }
 
     public ArticleAddResponse add(@PathVariable ArticleAddRequest dto) {
-        Article article = dto.toEntity();
-        Article savedArticle = articleRepository.save(article);
+        Article article = dto.toEntity(); //요청받은 Article을 Entity에 옮긴다. (id값이 없는상태)
+        Article savedArticle = articleRepository.save(article); //db에 저장 (Entity가 저장될때 id값 생성된다.)
         return new ArticleAddResponse(savedArticle.getId(),
                 savedArticle.getTitle(),savedArticle.getContent());
     }
