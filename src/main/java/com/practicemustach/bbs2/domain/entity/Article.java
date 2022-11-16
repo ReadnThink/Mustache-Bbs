@@ -1,5 +1,6 @@
 package com.practicemustach.bbs2.domain.entity;
 
+import com.practicemustach.bbs2.domain.dto.ArticleDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -37,5 +38,9 @@ public class Article {
         this.id = id;
         this.title = title;
         this.content = content;
+    }
+
+    public static ArticleDto of(Article article){
+        return new ArticleDto(article.getId(), article.getTitle(), article.getContent());
     }
 }
