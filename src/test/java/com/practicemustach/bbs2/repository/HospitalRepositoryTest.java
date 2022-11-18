@@ -25,11 +25,11 @@ class HospitalRepositoryTest {
         printHospitalNameAndAddress(hospitals);
     }
 
-    @Test // like="%송파구%" containing = %안넣어도 된다.
-    void containing(){
-        List<Hospital> hospitals = hospitalRepository.findByRoadNameAddressContaining("송파구");
-        printHospitalNameAndAddress(hospitals);
-    }
+//    @Test // like="%송파구%" containing = %안넣어도 된다.
+//    void containing(){
+//        List<Hospital> hospitals = hospitalRepository.findByRoadNameAddressContaining("송파구");
+//        printHospitalNameAndAddress(hospitals);
+//    }
 
     @Test
     void startsWith(){
