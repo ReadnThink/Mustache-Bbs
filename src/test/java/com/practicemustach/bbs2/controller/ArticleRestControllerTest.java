@@ -77,7 +77,7 @@ class ArticleRestControllerTest {
                 .andExpect(jsonPath("$.content").value("given내용입니다"))
                 .andDo(print());
 
-        verify(articleService).add(any()); //함수가 실행되었는지 확인
+//        verify(articleService).add(any()); //함수가 실행되었는지 확인
     }
 
 }

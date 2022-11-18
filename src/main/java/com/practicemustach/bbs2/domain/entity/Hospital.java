@@ -1,7 +1,10 @@
 package com.practicemustach.bbs2.domain.entity;
 
 import com.practicemustach.bbs2.domain.dto.HospitalResponse;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +14,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "nation_wide_hospitals") //클래스 이름의 테이블이 아닌 태그한 이름의 테이블이라는 표시
 @Getter
+@Builder //빌더를 사용하려면 NoArgsConstructor, AllArgsConstructor 가 필요하다
+@NoArgsConstructor
+@AllArgsConstructor
 public class Hospital {
     @Id
     private Integer id;

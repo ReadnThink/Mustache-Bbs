@@ -1,8 +1,7 @@
 package com.practicemustach.bbs2.domain.dto;
 
 import com.practicemustach.bbs2.domain.entity.Article;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
 
 @AllArgsConstructor
 @Getter

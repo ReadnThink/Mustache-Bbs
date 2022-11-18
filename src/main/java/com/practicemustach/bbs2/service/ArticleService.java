@@ -10,6 +10,7 @@ import com.practicemustach.bbs2.repository.ArticleRepository;
 import com.practicemustach.bbs2.repository.HospitalRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Optional;
 
@@ -32,7 +33,7 @@ public class ArticleService {
         return articleDto;
     }
 
-    public ArticleAddResponse add(@PathVariable ArticleAddRequest dto) {
+    public ArticleAddResponse add(ArticleAddRequest dto) {
         Article article = dto.toEntity(); //요청받은 Article을 Entity에 옮긴다. (id값이 없는상태)
         Article savedArticle = articleRepository.save(article); //db에 저장 (Entity가 저장될때 id값 생성된다.)
         return new ArticleAddResponse(savedArticle.getId(),

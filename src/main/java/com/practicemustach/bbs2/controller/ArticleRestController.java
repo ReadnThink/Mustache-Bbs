@@ -4,6 +4,7 @@ import com.practicemustach.bbs2.domain.dto.ArticleAddRequest;
 import com.practicemustach.bbs2.domain.dto.ArticleAddResponse;
 import com.practicemustach.bbs2.domain.dto.ArticleDto;
 import com.practicemustach.bbs2.service.ArticleService;
+import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class ArticleRestController {
     }
 
     @PostMapping("")
-    public ResponseEntity<ArticleAddResponse> addArticle(@RequestBody ArticleAddRequest dto) {
+    public ResponseEntity<ArticleAddResponse> addArticle(ArticleAddRequest dto) {
         ArticleAddResponse response = articleService.add(dto);
         return ResponseEntity.ok().body(response);
     }
