@@ -27,8 +27,4 @@ public class HospitalRestController {
         return ResponseEntity.ok().body(hospitalResponse); //return은 Dto로 한다.
     }
 
-    @PostMapping("/join")
-    public ResponseEntity<String> join(@RequestBody UserJoinRequest userJoinRequest) {
-        return ResponseEntity.ok().body(userService.join(userJoinRequest));
-    }
 }

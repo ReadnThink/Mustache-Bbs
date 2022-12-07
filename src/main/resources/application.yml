@@ -16,4 +16,8 @@ spring:
     database: mysql
     hibernate.ddl-auto: update
 
+jwt:
+  token:
+    secret: "secretKey"
+
 #    show-sql = sqp문을 terminal에 보여줌
